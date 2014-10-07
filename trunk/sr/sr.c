@@ -79,14 +79,14 @@ volatile uint16_t inversePulseLen = 0;//инвертированный импульс
 uint8_t outNormalReady = 0;
 uint8_t outInverseReady = 0;
 
-void __jumpMain     (void) __attribute__ ((naked)) __attribute__ ((section (".init0")));
-
-void __jumpMain(void)
-{
-    asm volatile ( ".set __stack, %0" :: "i" (RAMEND) );
-    asm volatile ( "clr __zero_reg__" );        // r1 set to 0
-    asm volatile ( "rjmp main");                   // jump to main()
-}
+//void __jumpMain     (void) __attribute__ ((naked)) __attribute__ ((section (".init0")));
+//
+//void __jumpMain(void)
+//{
+    //asm volatile ( ".set __stack, %0" :: "i" (RAMEND) );
+    //asm volatile ( "clr __zero_reg__" );        // r1 set to 0
+    //asm volatile ( "rjmp main");                   // jump to main()
+//}
 
 
 void __inline__ startTimer()
